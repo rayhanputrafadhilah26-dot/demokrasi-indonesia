@@ -118,6 +118,20 @@
     </style>
 </head>
     <link rel="icon" type="image/png" href="garuda.png">
+<script>
+    function toggleDarkMode() {
+        const body = document.body;
+        if (body.style.backgroundColor === 'rgb(29, 53, 87)') {
+            body.style.backgroundColor = '#f8f9fa';
+            body.style.color = '#1d3557';
+        } else {
+            body.style.backgroundColor = '#1d3557';
+            body.style.color = '#f1faee';
+        }
+    }
+</script>
+
+<button onclick="toggleDarkMode()" style="position: fixed; bottom: 20px; right: 20px; padding: 10px; border-radius: 50%; cursor: pointer; background: var(--merah); color: white; border: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">🌓</button>
 
 <body>
 
