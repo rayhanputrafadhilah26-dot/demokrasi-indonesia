@@ -2,30 +2,171 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Demokrasi Indonesia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda - Demokrasi Indonesia</title>
+    <!-- Google Fonts untuk tampilan profesional -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
-        /* Masukkan kode CSS tadi di sini */
-        .hero-section {
-            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('background-merah.jpg');
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
+        :root {
+            --merah: #ce1212;
+            --merah-muda: #ee6666;
+            --gelap: #1a1a1a;
+            --putih: #ffffff;
+            --abu: #f4f4f4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--abu);
+            color: var(--gelap);
+            overflow-x: hidden;
+        }
+
+        /* Navigasi */
+        nav {
             display: flex;
-            align-items: center;
             justify-content: center;
-            text-align: center;
+            padding: 20px;
+            gap: 30px;
+            background: var(--gelap);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        nav a {
             color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav a:hover {
+            color: var(--merah-muda);
+        }
+
+        /* Header Hero dengan Background Gambar & Efek Lengkung */
+        header {
+            position: relative;
+            /* Pastikan upload file background dengan nama hero-bg.jpg */
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(206, 18, 18, 0.7)), 
+                        url('hero-bg.jpg') no-repeat center center/cover;
+            color: white;
+            padding: 120px 20px;
+            text-align: center;
+            /* Membuat lengkungan di bawah header */
+            clip-path: ellipse(150% 100% at 50% 0%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header img { 
+            width: 110px; 
+            margin-bottom: 20px;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
+            background: white;
+            padding: 10px;
+            border-radius: 50%;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        }
+
+        header p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            font-weight: 300;
+        }
+
+        /* Kontainer Konten */
+        .container {
+            max-width: 900px;
+            margin: -40px auto 50px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        section {
+            background: var(--white);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            border-left: 6px solid var(--merah);
+            background: white;
+        }
+
+        h2 { 
+            color: var(--merah); 
+            margin-bottom: 20px; 
+            font-size: 2rem;
+        }
+
+        p {
+            line-height: 1.8;
+            font-size: 1.05rem;
+            color: #333;
+        }
+
+        footer {
+            text-align: center;
+            padding: 50px;
+            background: var(--gelap);
+            color: white;
+            margin-top: 50px;
+        }
+
+        /* Animasi sederhana */
+        section {
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
+    <nav>
+        <a href="index.html">Beranda</a>
+        <a href="sejarah.html">Sejarah</a>
+        <a href="suara-pemuda.html">Suara Pemuda</a>
+        <a href="kelompok.html">Kelompok</a>
+    </nav>
 
-    <section id="beranda" class="hero-section">
-        <div>
-            <h1>Selamat Datang di Demokrasi Indonesia</h1>
-            <p>Mari kawal demokrasi kita bersama.</p>
-        </div>
-    </section>
+    <header>
+        <img src="garuda.png" alt="Garuda Pancasila">
+        <h1>Demokrasi Indonesia</h1>
+        <p>Mewujudkan kedaulatan rakyat dalam keberagaman dan persatuan.</p>
+    </header>
 
+    <div class="container">
+        <section>
+            <h2>Selamat Datang</h2>
+            <p>Demokrasi Pancasila adalah sistem yang kita anut, di mana musyawarah dan mufakat menjadi kunci utama dalam pengambilan keputusan bangsa Indonesia.</p>
+            <p>Melalui website ini, mari kita pelajari bersama bagaimana sejarah dan aspirasi pemuda menjadi tonggak utama kedaulatan bangsa kita.</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Tugas Kelompok Demokrasi - Dari Rakyat, Oleh Rakyat, Untuk Rakyat.</p>
+    </footer>
 </body>
 </html>
