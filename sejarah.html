@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sejarah Demokrasi Indonesia</title>
+    <title>Sejarah Demokrasi Indonesia - Beranda</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
@@ -14,9 +14,9 @@
             background-color: #ffffff;
         }
 
-        /* Hero Section Styling dari Screenshot */
+        /* Hero Section Styling sesuai Screenshot */
         .hero-section {
-            background: linear-gradient(rgba(139, 0, 0, 0.9), rgba(139, 0, 0, 0.9)), 
+            background: linear-gradient(rgba(139, 0, 0, 0.95), rgba(139, 0, 0, 0.95)), 
                         url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
             background-color: #8B0000;
             clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
@@ -32,7 +32,7 @@
             align-items: center;
             justify-content: center;
             margin: -60px auto 0;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
             position: relative;
             z-index: 20;
         }
@@ -40,26 +40,26 @@
         .btn-custom {
             background-color: white;
             color: #8B0000;
-            padding: 12px 32px;
+            padding: 14px 36px;
             border-radius: 9999px;
-            font-weight: 600;
+            font-weight: 700;
             transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .btn-custom:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 20px -5px rgba(0, 0, 0, 0.2);
         }
 
-        /* Timeline Styling */
-        .timeline-card {
-            border-left: 4px solid #8B0000;
-            transition: all 0.3s ease;
+        .feature-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        .timeline-card:hover {
-            background-color: #fffafa;
-            transform: translateX(10px);
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: #8B0000;
         }
 
         .nav-link {
@@ -86,15 +86,16 @@
 <body class="text-slate-900">
 
     <!-- Navigasi -->
-    <nav class="absolute top-0 w-full z-50 text-white py-6">
+    <nav class="absolute top-0 w-full z-50 text-white py-8">
         <div class="max-w-7xl mx-auto px-8 flex justify-between items-center">
-            <div class="flex items-center gap-2">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Logogram_Kabinet_Merah_Putih.png" alt="Logo" class="w-8 h-8 filter brightness-0 invert">
-                <span class="font-bold text-xl tracking-wider">DEMOKRASI</span>
+            <div class="flex items-center gap-3">
+                <!-- Menggunakan garuda.png sebagai logo navigasi -->
+                <img src="garuda.png" alt="Logo Garuda" class="w-10 h-10 filter brightness-0 invert" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/National_emblem_of_Indonesia_Garuda_Pancasila.svg/100px-National_emblem_of_Indonesia_Garuda_Pancasila.svg.png';">
+                <span class="font-bold text-2xl tracking-tighter">DEMOKRASI<span class="text-red-400">ID</span></span>
             </div>
-            <div class="hidden md:flex gap-8 text-sm font-medium">
-                <a href="#" class="nav-link">BERANDA</a>
-                <a href="#sejarah" class="nav-link">SEJARAH</a>
+            <div class="hidden md:flex gap-10 text-sm font-bold tracking-widest uppercase">
+                <a href="index.html" class="text-red-300">BERANDA</a>
+                <a href="sejarah.html" class="nav-link">SEJARAH</a>
                 <a href="#" class="nav-link">EDU-POLITIK</a>
                 <a href="#" class="nav-link">PEMILU</a>
             </div>
@@ -102,115 +103,103 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-section pt-40 pb-32 text-center text-white px-6">
+    <section class="hero-section pt-48 pb-40 text-center text-white px-6">
         <div class="max-w-5xl mx-auto">
-            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight uppercase">
+            <h1 class="text-5xl md:text-8xl font-black mb-8 tracking-tighter leading-tight uppercase">
                 DEMOKRASI INDONESIA
             </h1>
-            <p class="text-lg md:text-xl text-red-100 max-w-3xl mx-auto mb-10 font-light leading-relaxed">
+            <p class="text-lg md:text-2xl text-red-100 max-w-3xl mx-auto mb-12 font-light leading-relaxed">
                 Mewujudkan kedaulatan rakyat dalam keberagaman dan persatuan berlandaskan nilai luhur Pancasila.
             </p>
-            <a href="#sejarah" class="btn-custom inline-block">
-                Mulai Jelajahi
-            </a>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#welcome" class="btn-custom inline-block">
+                    Mulai Jelajahi
+                </a>
+                <a href="sejarah.html" class="bg-transparent border-2 border-white/30 hover:bg-white/10 px-9 py-4 rounded-full font-bold transition-all uppercase tracking-widest text-sm">
+                    Lihat Sejarah
+                </a>
+            </div>
         </div>
     </section>
 
-    <!-- Logo Garuda Center -->
+    <!-- Logo Garuda Center menggunakan garuda.png -->
     <div class="garuda-container">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/National_emblem_of_Indonesia_Garuda_Pancasila.svg/1200px-National_emblem_of_Indonesia_Garuda_Pancasila.svg.png" alt="Garuda Pancasila" class="w-20 h-20 object-contain">
+        <img src="garuda.png" alt="Garuda Pancasila" class="w-24 h-24 object-contain" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/National_emblem_of_Indonesia_Garuda_Pancasila.svg/1200px-National_emblem_of_Indonesia_Garuda_Pancasila.svg.png';">
     </div>
 
-    <!-- Main Content -->
-    <main id="sejarah" class="max-w-4xl mx-auto px-6 py-24">
-        <div class="text-center mb-16">
-            <h2 class="text-4xl font-extrabold text-slate-800 mb-4">Sejarah & Timeline</h2>
-            <div class="w-20 h-1.5 bg-red-800 mx-auto rounded-full"></div>
+    <!-- Welcome Section -->
+    <main id="welcome" class="max-w-6xl mx-auto px-8 py-28">
+        <div class="text-center mb-20">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-slate-800 mb-6">Selamat Datang</h2>
+            <p class="text-slate-500 max-w-2xl mx-auto leading-relaxed">Platform digital edukasi mengenai pilar demokrasi, kedaulatan rakyat, dan perjalanan politik bangsa Indonesia.</p>
+            <div class="w-24 h-1.5 bg-red-800 mx-auto rounded-full mt-8"></div>
         </div>
 
-        <div class="space-y-12">
-            <!-- Era 1 -->
-            <div class="timeline-card bg-white p-8 shadow-sm border border-slate-100 rounded-r-xl">
-                <span class="text-red-800 font-bold tracking-widest text-sm uppercase">1945 – 1949</span>
-                <h3 class="text-2xl font-bold mt-2 mb-4 text-slate-800">🇮🇩 Awal Kemerdekaan</h3>
-                <p class="text-slate-600 leading-relaxed mb-4">17 Agustus 1945: Indonesia memproklamasikan kemerdekaan oleh Soekarno dan Mohammad Hatta. Indonesia mulai membangun sistem pemerintahan berdasarkan UUD 1945.</p>
-                <p class="text-slate-600 leading-relaxed italic">Masa ini diwarnai perjuangan mempertahankan kemerdekaan dari agresi Belanda.</p>
+        <!-- Dashboard / Features -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="feature-card bg-white p-10 rounded-3xl border border-slate-100 shadow-xl shadow-slate-100">
+                <div class="w-16 h-16 bg-red-50 text-red-800 rounded-2xl flex items-center justify-center mb-8 text-3xl">🏛️</div>
+                <h3 class="text-2xl font-bold mb-4">Pilar Demokrasi</h3>
+                <p class="text-slate-500 leading-relaxed mb-6">Pelajari eksekutif, legislatif, dan yudikatif sebagai penopang utama kestabilan negara kita.</p>
+                <a href="#" class="text-red-800 font-bold flex items-center gap-2 hover:gap-4 transition-all">
+                    Selengkapnya <span>&rarr;</span>
+                </a>
             </div>
 
-            <!-- Era 2 -->
-            <div class="timeline-card bg-white p-8 shadow-sm border border-slate-100 rounded-r-xl">
-                <span class="text-red-800 font-bold tracking-widest text-sm uppercase">1950 – 1959</span>
-                <h3 class="text-2xl font-bold mt-2 mb-4 text-slate-800">🏛️ Demokrasi Parlementer</h3>
-                <p class="text-slate-600 leading-relaxed mb-4">Indonesia resmi menjadi negara kesatuan pada 1950. Sistem yang digunakan adalah demokrasi parlementer di mana kabinet sering berganti karena konflik politik.</p>
-                <p class="text-slate-600 leading-relaxed">Pemilu pertama dilaksanakan pada tahun 1955 dan dianggap sebagai pemilu paling demokratis pada masa itu.</p>
+            <div class="feature-card bg-white p-10 rounded-3xl border border-slate-100 shadow-xl shadow-slate-100">
+                <div class="w-16 h-16 bg-red-50 text-red-800 rounded-2xl flex items-center justify-center mb-8 text-3xl">📜</div>
+                <h3 class="text-2xl font-bold mb-4">UUD 1945</h3>
+                <p class="text-slate-500 leading-relaxed mb-6">Konstitusi negara yang menjamin hak-hak sipil dan kedaulatan setiap warga negara Indonesia.</p>
+                <a href="#" class="text-red-800 font-bold flex items-center gap-2 hover:gap-4 transition-all">
+                    Baca Konstitusi <span>&rarr;</span>
+                </a>
             </div>
 
-            <!-- Era 3 -->
-            <div class="timeline-card bg-white p-8 shadow-sm border border-slate-100 rounded-r-xl">
-                <span class="text-red-800 font-bold tracking-widest text-sm uppercase">1959 – 1966</span>
-                <h3 class="text-2xl font-bold mt-2 mb-4 text-slate-800">📜 Demokrasi Terpimpin</h3>
-                <p class="text-slate-600 leading-relaxed mb-4">Tahun 1959, Presiden Soekarno mengeluarkan Dekret Presiden. Kekuasaan presiden menjadi sangat dominan dan peran partai politik dibatasi.</p>
-                <p class="text-slate-600 leading-relaxed">Situasi politik dan ekonomi memburuk hingga memicu krisis nasional di akhir periode.</p>
+            <div class="feature-card bg-white p-10 rounded-3xl border border-slate-100 shadow-xl shadow-slate-100">
+                <div class="w-16 h-16 bg-red-50 text-red-800 rounded-2xl flex items-center justify-center mb-8 text-3xl">🗳️</div>
+                <h3 class="text-2xl font-bold mb-4">Suara Rakyat</h3>
+                <p class="text-slate-500 leading-relaxed mb-6">Partisipasi aktif dalam Pemilu sebagai bentuk nyata implementasi nilai-nilai demokrasi Pancasila.</p>
+                <a href="#" class="text-red-800 font-bold flex items-center gap-2 hover:gap-4 transition-all">
+                    Info Pemilu <span>&rarr;</span>
+                </a>
             </div>
+        </div>
+    </main>
 
-            <!-- Era 4 -->
-            <div class="timeline-card bg-white p-8 shadow-sm border border-slate-100 rounded-r-xl">
-                <span class="text-red-800 font-bold tracking-widest text-sm uppercase">1966 – 1998</span>
-                <h3 class="text-2xl font-bold mt-2 mb-4 text-slate-800">🏗️ Orde Baru</h3>
-                <p class="text-slate-600 leading-relaxed mb-4">Tahun 1966, Soeharto mengambil alih kekuasaan. Pemerintahan menekankan stabilitas politik dan pembangunan ekonomi selama 32 tahun.</p>
-                <p class="text-slate-600 leading-relaxed">Meskipun pemilu rutin dilaksanakan, kebebasan berpendapat dibatasi hingga gerakan reformasi 1998 menuntut perubahan.</p>
+    <!-- Info Banner -->
+    <section class="bg-slate-900 py-24 px-8 overflow-hidden relative">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12 relative z-10">
+            <div class="text-center md:text-left">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ingin tahu lebih dalam tentang <span class="text-red-600">Sejarah Kita?</span></h2>
+                <p class="text-slate-400 mb-8 max-w-xl">Telusuri transformasi demokrasi Indonesia dari masa ke masa melalui timeline interaktif yang kami sediakan.</p>
+                <a href="sejarah.html" class="inline-block bg-red-700 hover:bg-red-600 text-white px-8 py-4 rounded-xl font-bold transition-colors">
+                    Pelajari Sejarah Sekarang
+                </a>
             </div>
-
-            <!-- Era 5 -->
-            <div class="timeline-card bg-white p-8 shadow-sm border border-slate-100 rounded-r-xl">
-                <span class="text-red-800 font-bold tracking-widest text-sm uppercase">1998 – Sekarang</span>
-                <h3 class="text-2xl font-bold mt-2 mb-4 text-slate-800">🗳️ Era Reformasi</h3>
-                <p class="text-slate-600 leading-relaxed mb-6">Dimulai sejak pengunduran diri Soeharto. Reformasi bertujuan memperbaiki sistem demokrasi, memperkuat kebebasan pers, dan membatasi masa jabatan presiden.</p>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-                    <div class="bg-red-50 p-4 rounded-lg">
-                        <h4 class="font-bold text-red-900 mb-2">Presiden Era Reformasi:</h4>
-                        <ul class="space-y-1 text-red-800">
-                            <li>• B. J. Habibie</li>
-                            <li>• Abdurrahman Wahid</li>
-                            <li>• Megawati Soekarnoputri</li>
-                            <li>• Susilo Bambang Yudhoyono</li>
-                            <li>• Joko Widodo</li>
-                            <li>• Prabowo Subianto</li>
-                        </ul>
-                    </div>
-                    <div class="bg-slate-50 p-4 rounded-lg">
-                        <h4 class="font-bold text-slate-900 mb-2">Capaian Utama:</h4>
-                        <ul class="space-y-1 text-slate-700">
-                            <li>• Pemilihan Langsung (2004)</li>
-                            <li>• Kebebasan Pers Luas</li>
-                            <li>• Otonomi Daerah</li>
-                            <li>• Pembatasan Jabatan</li>
-                        </ul>
-                    </div>
+            <div class="flex-shrink-0">
+                <div class="w-64 h-64 bg-red-600/10 rounded-full flex items-center justify-center animate-pulse">
+                    <!-- Placeholder visual menggunakan garuda.png dengan opasitas rendah -->
+                    <img src="garuda.png" class="w-40 h-40 opacity-10 grayscale" alt="Background Logo" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/National_emblem_of_Indonesia_Garuda_Pancasila.svg/400px-National_emblem_of_Indonesia_Garuda_Pancasila.svg.png';">
                 </div>
             </div>
         </div>
-
-        <!-- Kesimpulan -->
-        <section class="mt-20 bg-slate-900 text-white p-10 rounded-3xl shadow-xl">
-            <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
-                <span class="w-8 h-8 bg-red-600 rounded-full flex items-center justify-center text-sm">!</span>
-                Kesimpulan Umum
-            </h2>
-            <p class="text-slate-300 leading-relaxed">
-                Sejarah demokrasi Indonesia menunjukkan perjalanan yang dinamis. Dari sistem parlementer hingga masa Reformasi, Indonesia terus belajar melalui berbagai tantangan nasional. Saat ini, kemajuan nyata terlihat dari pemilu yang rutin dan peralihan kekuasaan yang berlangsung secara damai sebagai wujud kedaulatan rakyat.
-            </p>
-        </section>
-    </main>
+    </section>
 
     <!-- Footer -->
-    <footer class="bg-slate-50 border-t border-slate-200 py-12 px-6 text-center">
-        <div class="flex items-center justify-center gap-2 mb-4">
-            <div class="w-6 h-6 bg-red-800 rounded flex items-center justify-center text-white text-[10px] font-bold">D</div>
-            <span class="font-bold tracking-widest text-slate-800">DEMOKRASI INDONESIA</span>
+    <footer class="bg-white border-t border-slate-100 py-16 px-8 text-center">
+        <div class="flex items-center justify-center gap-3 mb-6">
+            <div class="w-8 h-8 bg-red-800 rounded-lg flex items-center justify-center text-white font-bold">D</div>
+            <span class="font-bold tracking-[0.2em] text-slate-800 uppercase">DEMOKRASI INDONESIA</span>
         </div>
-        <p class="text-slate-500 text-xs italic uppercase tracking-widest">Wadah edukasi kedaulatan rakyat Indonesia</p>
+        <p class="text-slate-400 text-sm max-w-lg mx-auto mb-10 leading-relaxed">Platform edukasi digital untuk memperkuat pemahaman nilai-negara, kedaulatan rakyat, dan persatuan Indonesia.</p>
+        <div class="flex justify-center gap-8 mb-12">
+            <a href="#" class="text-slate-400 hover:text-red-800 transition-colors uppercase text-[10px] font-black tracking-widest">Kebijakan</a>
+            <a href="#" class="text-slate-400 hover:text-red-800 transition-colors uppercase text-[10px] font-black tracking-widest">Tentang</a>
+            <a href="#" class="text-slate-400 hover:text-red-800 transition-colors uppercase text-[10px] font-black tracking-widest">Kontak</a>
+        </div>
+        <div class="text-[10px] text-slate-300 font-bold tracking-widest uppercase">
+            &copy; 2026 Arsip Digital Nasional Indonesia
+        </div>
     </footer>
 
 </body>
