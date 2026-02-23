@@ -2,257 +2,28 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demokrasi Indonesia | Tugas Kelompok</title>
-    
-    <style>
-    :root {
-        --primary: #6c5ce7;
-        --secondary: #a29bfe;
-        --dark: #2d3436;
-        --light: #f9f9fb;
-        --white: #ffffff;
-    }
-
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Poppins', sans-serif;
-    }
-
-    body {
-        background-color: var(--light);
-        color: var(--dark);
-        overflow-x: hidden;
-    }
-
-    /* Header bergaya Hero Section sesuai gambar */
-    header {
-        background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
-        min-height: 80vh;
-        color: white;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        padding: 2rem;
-        border-bottom-left-radius: 50% 10%;
-        border-bottom-right-radius: 50% 10%;
-    }
-
-    header img {
-        width: 120px;
-        filter: drop-shadow(0 5px 15px rgba(0,0,0,0.2));
-        margin-bottom: 20px;
-    }
-
-    header h1 {
-        font-size: 3.5rem;
-        font-weight: 800;
-        letter-spacing: -1px;
-    }
-
-    /* Navigasi Minimalis */
-    nav {
-        position: absolute;
-        top: 0;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        padding: 20px;
-        gap: 30px;
-    }
-
-    nav a {
-        color: white;
-        text-decoration: none;
-        font-weight: 500;
-        opacity: 0.8;
-        transition: 0.3s;
-    }
-
-    nav a:hover { opacity: 1; transform: translateY(-2px); }
-
-    /* Container Materi */
-    .container {
-        max-width: 1100px;
-        margin: -50px auto 50px;
-        padding: 0 20px;
-    }
-
-    section {
-        background: var(--white);
-        padding: 4rem 3rem;
-        margin-bottom: 30px;
-        border-radius: 24px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    }
-
-    h2 {
-        color: var(--primary);
-        font-size: 2rem;
-        margin-bottom: 20px;
-        text-align: center;
-    }
-
-    /* Gaya Kartu Anggota (Grid) */
-    .team-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
-    }
-
-    .team-card {
-        background: var(--light);
-        padding: 30px;
-        border-radius: 20px;
-        text-align: center;
-        transition: 0.4s;
-        border: 1px solid transparent;
-    }
-
-    .team-card:hover {
-        border-color: var(--primary);
-        transform: scale(1.05);
-        box-shadow: 0 20px 40px rgba(108, 92, 231, 0.1);
-    }
-
-    footer {
-        background: var(--dark);
-        color: white;
-        padding: 50px;
-        text-align: center;
-        border-top-left-radius: 50% 5%;
-        border-top-right-radius: 50% 5%;
-    }
-    </style>
+    <title>Beranda - Demokrasi Indonesia</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
-    <link rel="icon" type="image/png" href="garuda.png">
-
 <body>
-
-    <header>
-        <img src="garuda.png" alt="Garuda Pancasila" style="width: 150px; margin-bottom: 1rem;">
-        
-        <h1>DEMOKRASI INDONESIA</h1>
-        <p>Dari Rakyat, Oleh Rakyat, Untuk Rakyat</p>
-    </header>
-
     <nav>
-        <a href="#beranda">Beranda</a>
-        <a href="#sejarah">Sejarah</a>
-        <a href="#prinsip">Prinsip</a>
-        <a href="#kelompok">Kelompok</a>
+        <a href="index.html">Beranda</a>
+        <a href="sejarah.html">Sejarah</a>
+        <a href="suara-pemuda.html">Suara Pemuda</a>
+        <a href="kelompok.html">Kelompok</a>
     </nav>
-
-    <div class="hero" id="beranda">
-        <h2>Selamat Datang</h2>
-        <p>Website ini dibuat untuk mengedukasi tentang pentingnya sistem demokrasi yang berjalan di Indonesia.</p>
-    </div>
-
+    <header>
+        <img src="garuda.png" alt="Garuda">
+        <h1>Demokrasi Indonesia</h1>
+        <p>Mewujudkan kedaulatan rakyat dalam keberagaman.</p>
+    </header>
     <div class="container">
-        
-        <section id="pengertian">
-            <h2>Apa itu Demokrasi?</h2>
-            <p>Demokrasi adalah bentuk pemerintahan di mana seluruh warga negaranya memiliki hak setara dalam pengambilan keputusan yang dapat mengubah hidup mereka. Di Indonesia, kita menganut <strong>Demokrasi Pancasila</strong> yang mengutamakan musyawarah untuk mufakat.</p>
+        <section>
+            <h2>Selamat Datang</h2>
+            <p>Demokrasi Pancasila adalah sistem yang kita anut, di mana musyawarah dan mufakat menjadi kunci utama dalam pengambilan keputusan bangsa.</p>
         </section>
-
-        <section id="sejarah">
-            <h2>Sejarah Singkat</h2>
-            <p>Indonesia telah melewati beberapa fase demokrasi:</p>
-            <ul>
-                <li><strong>Demokrasi Parlementer (1945-1959):</strong> Kekuatan ada pada parlemen.</li>
-                <li><strong>Demokrasi Terpimpin (1959-1965):</strong> Kekuatan terpusat pada Presiden.</li>
-                <li><strong>Demokrasi Pancasila Era Orde Baru (1966-1998):</strong> Fokus pada stabilitas nasional.</li>
-                <li><strong>Era Reformasi (1998-Sekarang):</strong> Kebebasan pers dan pemilihan langsung oleh rakyat.</li>
-            </ul>
-        </section>
-
-        <section id="prinsip">
-            <h2>Ciri-Ciri Demokrasi di Indonesia</h2>
-            <p>1. Kedaulatan berada di tangan rakyat.<br>
-               2. Adanya pembagian kekuasaan (Eksekutif, Legislatif, Yudikatif).<br>
-               3. Penyelenggaraan Pemilu yang berkala.<br>
-               4. Adanya jaminan Hak Asasi Manusia (HAM).</p>
-        </section>
-
-        <section id="video-edukasi">
-    <h2>Video Pembelajaran: Demokrasi Indonesia</h2>
-    <p>Simak video di bawah ini untuk memahami bentuk dan perkembangan demokrasi di negara kita dari masa ke masa.</p>
-    
-    <div style="text-align: center; margin-top: 20px;">
-        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
-            <iframe 
-                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
-                src="https://www.youtube.com/embed/h32LjRkbNCM" 
-                title="DEMOKRASI INDONESIA | BENTUK DAN PERKEMBANGANNYA" 
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                allowfullscreen>
-            </iframe>
-        </div>
     </div>
-
-    <div style="margin-top: 15px; background: #f9f9f9; padding: 15px; border-radius: 8px; font-size: 0.95rem;">
-        <strong>Apa yang dipelajari di video ini?</strong>
-        <ul style="margin-left: 20px; margin-top: 10px;">
-            <li><strong>Definisi:</strong> Pemerintahan dari, oleh, dan untuk rakyat [00:00:47].</li>
-            <li><strong>Demokrasi Pancasila:</strong> Kedaulatan rakyat yang berlandaskan nilai-nilai Pancasila [00:01:23].</li>
-            <li><strong>Perkembangan Sejarah:</strong> Mulai dari era Parlementer, Terpimpin, Orde Baru, hingga Reformasi [00:03:03].</li>
-        </ul>
-    </div>
-</section>
-        
-<div style="background: #eee; padding: 20px; border-radius: 10px; text-align: center; margin-top: 20px;">
-    <p><strong>Uji Pemahamanmu:</strong> Siapa pemegang kekuasaan tertinggi dalam demokrasi?</p>
-    <button onclick="alert('Betul! Rakyat adalah pemegang kekuasaan tertinggi.')" style="margin: 5px; padding: 8px 15px; cursor: pointer;">A. Rakyat</button>
-    <button onclick="alert('Salah, coba ingat lagi semboyan demokrasi.')" style="margin: 5px; padding: 8px 15px; cursor: pointer;">B. Presiden</button>
-</div>
-
-        <section id="suara-pemuda">
-    <h2>Suara Pemuda</h2>
-    <p>Sampaikan aspirasi, harapan, atau pendapatmu mengenai demokrasi di Indonesia melalui mading digital di bawah ini. Klik tombol <strong>+</strong> pada Padlet untuk menulis!</p>
-    
-    <div style="margin-top: 20px;">
-        <div class="padlet-embed" style="border:1px solid rgba(0,0,0,0.1);border-radius:8px;box-sizing:border-box;overflow:hidden;position:relative;width:100%;background:#F4F4F4">
-            <p style="padding:0;margin:0">
-                <iframe src="https://padlet.com/embed/62w7awxjmt55po8d" frameborder="0" allow="camera;microphone;geolocation;display-capture;clipboard-write" style="width:100%;height:608px;display:block;padding:0;margin:0"></iframe>
-            </p>
-            <div style="display:flex;align-items:center;justify-content:end;margin:0;padding:8px 8px 8px 0">
-                <a href="https://padlet.com?ref=embed" style="display:flex;align-items:center;gap:5px;flex-grow:0;margin:0;border:none;padding:0;text-decoration:none" target="_blank">
-                    <span aria-hidden style="color:#9E9E9E;font-size:10px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,sans-serif;line-height:1">Made with</span>
-                    <img src="https://padlet.net/emails/padlet_email_logo_2026_text-dark-200.png" height="12" style="padding:0;margin:0;background:0 0;border:none;box-shadow:none;display:block" alt="Dibuat dengan Padlet">
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-
-        <section id="kelompok">
-            <h2>Anggota Kelompok</h2>
-            <div class="team-grid">
-                <div class="team-card">
-                    <strong>Nama Anggota 1</strong>
-                    <p>Ketua Kelompok</p>
-                </div>
-                <div class="team-card">
-                    <strong>Nama Anggota 2</strong>
-                    <p>Penyusun Materi</p>
-                </div>
-                <div class="team-card">
-                    <strong>Nama Anggota 3</strong>
-                    <p>Desain Website</p>
-                </div>
-            </div>
-        </section>
-
-    </div>
-
-    <footer>
-        <p>&copy; 2026 Tugas Kelompok PKN - SMAN 1 BANDUNG</p>
-    </footer>
-
+    <footer>&copy; 2024 Tugas Kelompok Demokrasi</footer>
 </body>
 </html>
