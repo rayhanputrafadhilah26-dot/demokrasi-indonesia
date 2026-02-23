@@ -3,235 +3,315 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sejarah - DemokrasiID</title>
+    <title>Demokrasi Indonesia - Sejarah</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Reset & Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-        }
-
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
         body {
-            background-color: #f9f9f9;
-            color: #333;
-            line-height: 1.6;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #ffffff;
         }
 
-        /* Navbar Style (Sesuai Gambar) */
-        nav {
-            background-color: #8B0000; /* Merah Tua */
-            padding: 15px 50px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+        .hero-section {
+            background: linear-gradient(rgba(139, 0, 0, 0.95), rgba(139, 0, 0, 0.95)), 
+                        url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
+            background-color: #8B0000;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+            padding-bottom: 120px;
         }
 
-        .logo {
-            color: white;
-            font-weight: bold;
-            font-size: 20px;
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-        }
-
-        .logo img {
-            height: 30px;
-            margin-right: 10px;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        nav ul li {
-            margin-left: 20px;
-        }
-
-        nav ul li a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: 0.3s;
-        }
-
-        nav ul li a:hover, nav ul li a.active {
-            color: white;
-            border-bottom: 2px solid white;
-            padding-bottom: 5px;
-        }
-
-        /* Content Style */
-        .container {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 40px;
+        .garuda-container {
+            width: 120px;
+            height: 120px;
             background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
-
-        h1 {
-            color: #8B0000;
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 2.5rem;
-        }
-
-        .timeline-section {
-            margin-bottom: 40px;
-            padding-left: 20px;
-            border-left: 3px solid #8B0000;
-        }
-
-        h2 {
-            color: #b22222;
-            margin-bottom: 15px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        li {
-            margin-bottom: 12px;
+            justify-content: center;
+            margin: -60px auto 0;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
             position: relative;
-            padding-left: 25px;
+            z-index: 20;
         }
 
-        li::before {
-            content: "➡️";
+        .nav-link {
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav-link::after {
+            content: '';
             position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
             left: 0;
+            background-color: #ffffff;
+            transition: width 0.3s;
         }
 
-        .sub-list {
-            margin-left: 20px;
-            margin-top: 10px;
+        .nav-link:hover::after {
+            width: 100%;
         }
 
-        .sub-list li::before {
-            content: "✅";
+        .timeline-card {
+            border-left: 4px solid #8B0000;
+            transition: all 0.3s ease;
         }
 
-        hr {
-            border: 0;
-            height: 1px;
-            background: #eee;
-            margin: 30px 0;
+        .timeline-card:hover {
+            background-color: #fffafa;
+            transform: translateX(10px);
         }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            font-size: 14px;
-            color: #777;
+        .list-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
         }
     </style>
 </head>
-<body>
+<body class="text-slate-900">
 
-    <nav>
-        <a href="index.html" class="logo">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/a/ac/National_emblem_of_Indonesia_Garuda_Pancasila.svg" alt="Garuda">
-            DEMOKRASI<span>ID</span>
-        </a>
-        <ul>
-            <li><a href="index.html">Beranda</a></li>
-            <li><a href="sejarah.html" class="active">Sejarah</a></li>
-            <li><a href="#">Edu-Politik</a></li>
-            <li><a href="#">Pemilu</a></li>
-        </ul>
+    <!-- Navigasi -->
+    <nav class="absolute top-0 w-full z-50 text-white py-8">
+        <div class="max-w-7xl mx-auto px-8 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <!-- Menggunakan garuda.png untuk logo navigasi -->
+                <img src="garuda.png" alt="Logo Garuda" class="w-10 h-10 filter brightness-0 invert" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/National_emblem_of_Indonesia_Garuda_Pancasila.svg/100px-National_emblem_of_Indonesia_Garuda_Pancasila.svg.png';">
+                <span class="font-bold text-2xl tracking-tighter">DEMOKRASI<span class="text-red-400">ID</span></span>
+            </div>
+            <div class="hidden md:flex gap-10 text-sm font-bold tracking-widest uppercase">
+                <a href="index.html" class="nav-link">BERANDA</a>
+                <a href="sejarah.html" class="text-red-300">SEJARAH</a>
+                <a href="#" class="nav-link">EDU-POLITIK</a>
+                <a href="#" class="nav-link">PEMILU</a>
+            </div>
+        </div>
     </nav>
 
-    <div class="container">
-        <h1>Timeline Sejarah Demokrasi Indonesia 🇮🇩</h1>
-
-        <div class="timeline-section">
-            <h2>1945 – 1949: Awal Kemerdekaan 📢</h2>
-            <ul>
-                <li>17 Agustus 1945: Indonesia memproklamasikan kemerdekaan oleh Soekarno dan Mohammad Hatta.</li>
-                <li>Indonesia mulai membangun sistem pemerintahan berdasarkan UUD 1945.</li>
-                <li>Dalam praktiknya, sistem pemerintahan sempat berubah menjadi sistem parlementer, di mana kekuasaan eksekutif dijalankan oleh kabinet yang bertanggung jawab kepada parlemen.</li>
-                <li>Masa ini diwarnai perjuangan mempertahankan kemerdekaan dari Belanda.</li>
-            </ul>
+    <!-- Hero Section -->
+    <section class="hero-section pt-48 pb-40 text-center text-white px-6">
+        <div class="max-w-5xl mx-auto">
+            <h1 class="text-4xl md:text-7xl font-black mb-8 tracking-tighter leading-tight uppercase">
+                Timeline Sejarah Demokrasi Indonesia
+            </h1>
+            <p class="text-lg md:text-xl text-red-100 max-w-3xl mx-auto mb-12 font-light leading-relaxed">
+                Menelusuri perjalanan panjang kedaulatan rakyat dari masa kemerdekaan hingga era reformasi modern.
+            </p>
         </div>
+    </section>
 
-        <div class="timeline-section">
-            <h2>1950 – 1959: Demokrasi Parlementer 🏛️</h2>
-            <ul>
-                <li>Indonesia resmi menjadi negara kesatuan pada 1950.</li>
-                <li>Sistem yang digunakan adalah demokrasi parlementer.</li>
-                <li>Kabinet sering berganti karena konflik politik antarpartai.</li>
-                <li>Pemilu pertama dilaksanakan pada tahun 1955 dan dianggap sebagai pemilu paling demokratis pada masa itu.</li>
-                <li>Ketidakstabilan politik membuat pemerintahan sulit berjalan efektif.</li>
-            </ul>
-        </div>
-
-        <div class="timeline-section">
-            <h2>1959 – 1966: Demokrasi Terpimpin (Orde Lama) ✊</h2>
-            <ul>
-                <li>Tahun 1959, Presiden Soekarno mengeluarkan Dekret Presiden dan kembali ke UUD 1945.</li>
-                <li>Sistem berubah menjadi Demokrasi Terpimpin.</li>
-                <li>Kekuasaan presiden menjadi sangat dominan.</li>
-                <li>Peran partai politik dibatasi.</li>
-                <li>Situasi politik dan ekonomi memburuk hingga terjadi krisis nasional.</li>
-            </ul>
-        </div>
-
-        <div class="timeline-section">
-            <h2>1966 – 1998: Orde Baru 🏗️</h2>
-            <ul>
-                <li>Tahun 1966, Soeharto mengambil alih kekuasaan.</li>
-                <li>Pemerintahan Orde Baru berlangsung selama 32 tahun.</li>
-                <li>Pemerintah menekankan stabilitas politik dan pembangunan ekonomi.</li>
-                <li>Pemilu tetap dilaksanakan, tetapi tidak sepenuhnya bebas dan adil.</li>
-                <li>Kebebasan berpendapat dibatasi.</li>
-                <li>Krisis ekonomi Asia tahun 1997 memicu ketidakstabilan.</li>
-                <li>Tahun 1998, gelombang demonstrasi besar menyebabkan Soeharto mengundurkan diri.</li>
-            </ul>
-        </div>
-
-        <div class="timeline-section">
-            <h2>1998 – Sekarang: Era Reformasi ✨</h2>
-            <p style="margin-bottom: 10px;">Dimulai sejak pengunduran diri Soeharto pada 1998.</p>
-            <ul>
-                <li>Pemerintahan dipimpin oleh B. J. Habibie sebagai presiden transisi.</li>
-                <li>Reformasi bertujuan memperbaiki sistem demokrasi, memperkuat kebebasan pers, dan membatasi masa jabatan presiden.</li>
-                <li>Sejak 1999, Indonesia secara rutin menyelenggarakan pemilu yang lebih terbuka dan kompetitif.</li>
-                <li>Pergantian presiden berlangsung damai melalui pemilu:
-                    <ul class="sub-list">
-                        <li>Abdurrahman Wahid</li>
-                        <li>Megawati Soekarnoputri</li>
-                        <li>Susilo Bambang Yudhoyono</li>
-                        <li>Joko Widodo</li>
-                        <li>Prabowo Subianto</li>
-                    </ul>
-                </li>
-                <li>Pemilihan presiden secara langsung oleh rakyat (sejak 2004), kebebasan pers lebih luas, dan otonomi daerah.</li>
-            </ul>
-        </div>
-
-        <hr>
-
-        <div style="padding: 20px; background: #fff5f5; border-radius: 8px;">
-            <h2 style="font-size: 1.2rem;">Kesimpulan Umum 📝</h2>
-            <p>Sejarah demokrasi Indonesia menunjukkan perjalanan yang tidak selalu stabil. Indonesia pernah mengalami sistem parlementer, sistem terpimpin, pemerintahan otoriter, hingga akhirnya memasuki masa Reformasi. Saat ini, demokrasi Indonesia masih terus berkembang melalui pemilu rutin dan peralihan kekuasaan yang damai.</p>
-        </div>
+    <!-- Logo Garuda Center -->
+    <div class="garuda-container">
+        <!-- Menggunakan garuda.png untuk elemen tengah -->
+        <img src="garuda.png" alt="Garuda Pancasila" class="w-24 h-24 object-contain" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/National_emblem_of_Indonesia_Garuda_Pancasila.svg/1200px-National_emblem_of_Indonesia_Garuda_Pancasila.svg.png';">
     </div>
 
-    <footer>
-        &copy; 2025 DemokrasiID - Mewujudkan Kedaulatan Rakyat
+    <!-- Timeline Content -->
+    <main class="max-w-4xl mx-auto px-8 py-24">
+        
+        <div class="space-y-16">
+            <!-- 1945 - 1949 -->
+            <section class="timeline-card bg-white p-8 md:p-12 shadow-xl shadow-slate-100 rounded-r-3xl border border-slate-50">
+                <div class="mb-6">
+                    <span class="bg-red-800 text-white font-black px-4 py-1 rounded-full text-xs tracking-widest uppercase">1945 – 1949</span>
+                </div>
+                <h2 class="text-3xl font-extrabold text-slate-800 mb-6">Awal Kemerdekaan 🇮🇩</h2>
+                <div class="space-y-4 text-slate-600 leading-relaxed">
+                    <div class="list-item">
+                        <span>🗓️</span>
+                        <p><strong>17 Agustus 1945:</strong> Indonesia memproklamasikan kemerdekaan oleh Soekarno dan Mohammad Hatta.</p>
+                    </div>
+                    <div class="list-item">
+                        <span>🏛️</span>
+                        <p>Indonesia mulai membangun sistem pemerintahan berdasarkan UUD 1945.</p>
+                    </div>
+                    <div class="list-item">
+                        <span>📜</span>
+                        <p>Dalam praktiknya, sistem pemerintahan sempat berubah menjadi sistem parlementer, di mana kekuasaan eksekutif dijalankan oleh kabinet yang bertanggung jawab kepada parlemen.</p>
+                    </div>
+                    <div class="list-item">
+                        <span>⚔️</span>
+                        <p>Masa ini diwarnai perjuangan mempertahankan kemerdekaan dari Belanda.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 1950 - 1959 -->
+            <section class="timeline-card bg-white p-8 md:p-12 shadow-xl shadow-slate-100 rounded-r-3xl border border-slate-50">
+                <div class="mb-6">
+                    <span class="bg-red-800 text-white font-black px-4 py-1 rounded-full text-xs tracking-widest uppercase">1950 – 1959</span>
+                </div>
+                <h2 class="text-3xl font-extrabold text-slate-800 mb-6">Demokrasi Parlementer 🏛️</h2>
+                <div class="space-y-4 text-slate-600 leading-relaxed">
+                    <div class="list-item">
+                        <span>📍</span>
+                        <p>Indonesia resmi menjadi negara kesatuan pada 1950.</p>
+                    </div>
+                    <div class="list-item">
+                        <span>⚖️</span>
+                        <p>Sistem yang digunakan adalah demokrasi parlementer.</p>
+                    </div>
+                    <div class="list-item">
+                        <span>🔄</span>
+                        <p>Kabinet sering berganti karena konflik politik antarpartai.</p>
+                    </div>
+                    <div class="list-item">
+                        <span>🗳️</span>
+                        <p>Pemilu pertama dilaksanakan pada tahun 1955 dan dianggap sebagai pemilu paling demokratis pada masa itu.</p>
+                    </div>
+                    <div class="list-item">
+                        <span>⚠️</span>
+                        <p>Ketidakstabilan politik membuat pemerintahan sulit berjalan efektif.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 1959 - 1966 -->
+            <section class="timeline-card bg-white p-8 md:p-12 shadow-xl shadow-slate-100 rounded-r-3xl border border-slate-50">
+                <div class="mb-6">
+                    <span class="bg-red-800 text-white font-black px-4 py-1 rounded-full text-xs tracking-widest uppercase">1959 – 1966</span>
+                </div>
+                <h2 class="text-3xl font-extrabold text-slate-800 mb-6">Demokrasi Terpimpin (Orde Lama) 📜</h2>
+                <div class="space-y-4 text-slate-600 leading-relaxed">
+                    <div class="list-item">
+                        <span>✍️</span>
+                        <p>Tahun 1959, Presiden Soekarno mengeluarkan Dekret Presiden dan kembali ke UUD 1945.</p>
+                    </div>
+                    <div class="list-item">
+                        <span>🚩</span>
+                        <p>Sistem berubah menjadi Demokrasi Terpimpin.</p>
+                    </div>
+                    <div class="list-item">
+                        <span>👤</span>
+                        <p>Kekuasaan presiden menjadi sangat dominan.</p>
+                    </div>
+                    <div class="list-item">
+                        <span>🚫</span>
+                        <p>Peran partai politik dibatasi.</p>
+                    </div>
+                    <div class="list-item">
+                        <span>📉</span>
+                        <p>Situasi politik dan ekonomi memburuk hingga terjadi krisis nasional.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 1966 - 1998 -->
+            <section class="timeline-card bg-white p-8 md:p-12 shadow-xl shadow-slate-100 rounded-r-3xl border border-slate-50">
+                <div class="mb-6">
+                    <span class="bg-red-800 text-white font-black px-4 py-1 rounded-full text-xs tracking-widest uppercase">1966 – 1998</span>
+                </div>
+                <h2 class="text-3xl font-extrabold text-slate-800 mb-6">Orde Baru 🏗️</h2>
+                <div class="space-y-4 text-slate-600 leading-relaxed">
+                    <div class="list-item">
+                        <span>👔</span>
+                        <p>Tahun 1966, Soeharto mengambil alih kekuasaan.</p>
+                    </div>
+                    <div class="list-item">
+                        <span>⏳</span>
+                        <p>Pemerintahan Orde Baru berlangsung selama 32 tahun.</p>
+                    </div>
+                    <div class="list-item">
+                        <span>📈</span>
+                        <p>Pemerintah menekankan stabilitas politik dan pembangunan ekonomi.</p>
+                    </div>
+                    <div class="list-item">
+                        <span>🗳️</span>
+                        <p>Pemilu tetap dilaksanakan, tetapi tidak sepenuhnya bebas dan adil.</p>
+                    </div>
+                    <div class="list-item">
+                        <span>🔇</span>
+                        <p>Kebebasan berpendapat dibatasi.</p>
+                    </div>
+                    <div class="list-item">
+                        <span>📉</span>
+                        <p>Krisis ekonomi Asia tahun 1997 memicu ketidakstabilan.</p>
+                    </div>
+                    <div class="list-item">
+                        <span>📣</span>
+                        <p>Tahun 1998, gelombang demonstrasi besar menyebabkan Soeharto mengundurkan diri.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 1998 - SEKARANG -->
+            <section class="timeline-card bg-white p-8 md:p-12 shadow-xl shadow-slate-100 rounded-r-3xl border border-slate-50 border-red-100">
+                <div class="mb-6">
+                    <span class="bg-red-800 text-white font-black px-4 py-1 rounded-full text-xs tracking-widest uppercase">1998 – Sekarang</span>
+                </div>
+                <h2 class="text-3xl font-extrabold text-slate-800 mb-6">Era Reformasi 🗳️</h2>
+                <div class="space-y-6 text-slate-600 leading-relaxed">
+                    <div class="list-item">
+                        <span>🌱</span>
+                        <p>Dimulai sejak pengunduran diri Soeharto pada 1998.</p>
+                    </div>
+                    <div class="list-item">
+                        <span>🤝</span>
+                        <p>Pemerintahan dipimpin oleh B. J. Habibie sebagai presiden transisi.</p>
+                    </div>
+                    <div class="list-item">
+                        <span>✨</span>
+                        <p>Reformasi bertujuan memperbaiki sistem demokrasi, memperkuat kebebasan pers, dan membatasi masa jabatan presiden.</p>
+                    </div>
+                    <div class="list-item">
+                        <span>🗳️</span>
+                        <p>Sejak 1999, Indonesia secara rutin menyelenggarakan pemilu yang lebih terbuka dan kompetitif.</p>
+                    </div>
+
+                    <div class="mt-8 p-6 bg-red-50 rounded-2xl border border-red-100">
+                        <h4 class="font-bold text-red-900 mb-4 uppercase text-sm tracking-wider">Pergantian presiden melalui pemilu:</h4>
+                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm font-medium">
+                            <li>🔹 Abdurrahman Wahid</li>
+                            <li>🔹 Megawati Soekarnoputri</li>
+                            <li>🔹 Susilo Bambang Yudhoyono</li>
+                            <li>🔹 Joko Widodo</li>
+                            <li>🔹 Prabowo Subianto</li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-8 space-y-3">
+                        <h4 class="font-bold text-slate-800 uppercase text-sm tracking-wider">Masa Reformasi ditandai dengan:</h4>
+                        <div class="list-item"><span>✅</span> <p>Pemilihan presiden secara langsung oleh rakyat (sejak 2004).</p></div>
+                        <div class="list-item"><span>✅</span> <p>Kebebasan pers yang lebih luas.</p></div>
+                        <div class="list-item"><span>✅</span> <p>Desentralisasi kekuasaan melalui otonomi daerah.</p></div>
+                        <div class="list-item"><span>✅</span> <p>Peran masyarakat sipil yang semakin kuat.</p></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- KESIMPULAN -->
+            <section class="bg-slate-900 p-8 md:p-12 rounded-3xl text-white">
+                <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                    <span>📝</span> Kesimpulan Umum
+                </h2>
+                <p class="text-slate-300 leading-relaxed">
+                    Sejarah demokrasi Indonesia menunjukkan perjalanan yang tidak selalu stabil. Indonesia pernah mengalami sistem parlementer, sistem terpimpin, pemerintahan otoriter, hingga akhirnya memasuki masa Reformasi. Saat ini, demokrasi Indonesia masih terus berkembang dan menghadapi berbagai tantangan, tetapi telah menunjukkan kemajuan melalui pemilu yang rutin dan peralihan kekuasaan yang berlangsung secara damai.
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-100 py-16 px-8 text-center">
+        <div class="flex items-center justify-center gap-3 mb-6">
+            <!-- Menggunakan garuda.png untuk footer (kecil) -->
+            <img src="garuda.png" alt="Footer Logo" class="w-8 h-8 opacity-80" onerror="this.style.display='none'">
+            <span class="font-bold tracking-[0.2em] text-slate-800 uppercase">DEMOKRASI INDONESIA</span>
+        </div>
+        <p class="text-slate-400 text-sm max-w-lg mx-auto mb-10 leading-relaxed">Platform edukasi digital untuk memperkuat pemahaman nilai-negara, kedaulatan rakyat, dan persatuan Indonesia.</p>
+        <div class="flex justify-center gap-8 mb-12">
+            <a href="index.html" class="text-slate-400 hover:text-red-800 transition-colors uppercase text-[10px] font-black tracking-widest">Beranda</a>
+            <a href="sejarah.html" class="text-red-800 transition-colors uppercase text-[10px] font-black tracking-widest">Sejarah</a>
+            <a href="#" class="text-slate-400 hover:text-red-800 transition-colors uppercase text-[10px] font-black tracking-widest">Kontak</a>
+        </div>
+        <div class="text-[10px] text-slate-300 font-bold tracking-widest uppercase">
+            &copy; 2026 Arsip Digital Nasional Indonesia
+        </div>
     </footer>
 
 </body>
