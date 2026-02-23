@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demokrasi Indonesia - Edu Politik</title>
+    <title>Demokrasi Indonesia - Beranda</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
@@ -11,33 +11,13 @@
         body {
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
-            background-color: #ffffff;
         }
 
-        .hero-section {
-            background: linear-gradient(rgba(139, 0, 0, 0.95), rgba(139, 0, 0, 0.95)), 
-                        url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
-            background-color: #8B0000;
-            clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
-            padding-bottom: 120px;
-        }
-
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            max-width: 100%;
-            border-radius: 24px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+        .hero-gradient {
+            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), 
+                        url('https://images.unsplash.com/photo-1590519303534-72216503923a?auto=format&fit=crop&q=80&w=2000');
+            background-size: cover;
+            background-position: center;
         }
 
         .nav-link {
@@ -52,7 +32,7 @@
             height: 2px;
             bottom: -4px;
             left: 0;
-            background-color: #ffffff;
+            background-color: #ef4444;
             transition: width 0.3s;
         }
 
@@ -60,153 +40,133 @@
             width: 100%;
         }
 
-        .feature-card {
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
         }
 
-        .feature-card:hover {
-            transform: translateY(-10px);
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-5px);
         }
 
-        .floating-garuda {
-            width: 100px;
-            height: 100px;
-            background: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: -50px auto 0;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            position: relative;
-            z-index: 40;
+        .garuda-float {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
         }
     </style>
 </head>
-<body class="text-slate-900">
+<body class="bg-slate-950 text-slate-100">
 
     <!-- Navigasi -->
-    <nav class="absolute top-0 w-full z-50 text-white py-8">
-        <div class="max-w-7xl mx-auto px-8 flex justify-between items-center">
+    <nav class="fixed top-0 w-full z-50 py-8 px-8 transition-all duration-300">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <img src="garuda.png" alt="Logo Garuda" class="w-10 h-10 filter brightness-0 invert" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/National_emblem_of_Indonesia_Garuda_Pancasila.svg/100px-National_emblem_of_Indonesia_Garuda_Pancasila.svg.png';">
-                <span class="font-bold text-2xl tracking-tighter uppercase">DEMOKRASI<span class="text-red-400">ID</span></span>
+                <!-- Logo Navigasi menggunakan garuda.png -->
+                <img src="garuda.png" alt="Logo Garuda Pancasila" class="w-12 h-12 filter brightness-0 invert" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/National_emblem_of_Indonesia_Garuda_Pancasila.svg/100px-National_emblem_of_Indonesia_Garuda_Pancasila.svg.png';">
+                <span class="font-bold text-2xl tracking-tighter uppercase">DEMOKRASI<span class="text-red-600">ID</span></span>
             </div>
-            <div class="hidden md:flex gap-10 text-sm font-bold tracking-widest uppercase">
-                <a href="index.html" class="nav-link">BERANDA</a>
+            <div class="hidden md:flex gap-10 text-xs font-bold tracking-widest uppercase">
+                <a href="index.html" class="text-red-500">BERANDA</a>
                 <a href="sejarah.html" class="nav-link">SEJARAH</a>
-                <a href="edupolitik.html" class="text-red-300">EDU-POLITIK</a>
+                <a href="edupolitik.html" class="nav-link">EDU-POLITIK</a>
                 <a href="#" class="nav-link">PEMILU</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-section pt-48 pb-40 text-center text-white px-6">
-        <div class="max-w-5xl mx-auto">
-            <h1 class="text-4xl md:text-7xl font-black mb-8 tracking-tighter leading-tight uppercase">
-                Ruang Edukasi Politik
+    <header class="relative h-screen flex items-center justify-center text-center px-6 hero-gradient">
+        <div class="max-w-4xl space-y-8 relative z-10">
+            <div class="mb-6 flex justify-center">
+                <!-- Logo Hero menggunakan garuda.png -->
+                <img src="garuda.png" alt="Garuda Indonesia" class="w-32 h-32 garuda-float filter brightness-0 invert opacity-90" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/National_emblem_of_Indonesia_Garuda_Pancasila.svg/400px-National_emblem_of_Indonesia_Garuda_Pancasila.svg.png';">
+            </div>
+            <div class="inline-block px-4 py-1 border border-red-500/30 bg-red-500/10 rounded-full text-red-500 text-[10px] font-black tracking-[0.3em] uppercase animate-pulse">
+                Bhinneka Tunggal Ika
+            </div>
+            <h1 class="text-5xl md:text-8xl font-black tracking-tighter leading-tight uppercase">
+                Menjaga Api <span class="text-red-600">Demokrasi</span>
             </h1>
-            <p class="text-lg md:text-xl text-red-100 max-w-3xl mx-auto mb-12 font-light leading-relaxed">
-                Pahami esensi kedaulatan rakyat melalui video pembelajaran dan ringkasan konstitusi yang mendalam.
+            <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto font-light leading-relaxed">
+                Platform digital resmi untuk memahami kedaulatan rakyat, konstitusi, dan sejarah panjang perjuangan bangsa Indonesia.
             </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center pt-8">
+                <a href="edupolitik.html" class="px-10 py-4 bg-red-700 hover:bg-red-600 text-white font-bold rounded-xl transition-all shadow-xl shadow-red-900/20 uppercase text-sm tracking-widest">
+                    Mulai Belajar
+                </a>
+                <a href="sejarah.html" class="px-10 py-4 bg-white/5 hover:bg-white/10 border border-white/10 text-white font-bold rounded-xl transition-all uppercase text-sm tracking-widest">
+                    Lihat Sejarah
+                </a>
+            </div>
         </div>
-    </section>
-
-    <!-- Floating Logo Garuda -->
-    <div class="floating-garuda">
-        <img src="garuda.png" alt="Garuda Pancasila" class="w-20 h-20 object-contain" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/National_emblem_of_Indonesia_Garuda_Pancasila.svg/1200px-National_emblem_of_Indonesia_Garuda_Pancasila.svg.png';">
-    </div>
+    </header>
 
     <!-- Main Content -->
-    <main class="max-w-6xl mx-auto px-8 py-24 relative z-30">
-        
-        <!-- Video Section -->
-        <div class="bg-white p-6 md:p-12 rounded-[40px] shadow-2xl shadow-slate-200 border border-slate-50 mb-24">
-            <div class="text-center mb-10">
-                <span class="bg-red-100 text-red-800 font-black px-4 py-1 rounded-full text-[10px] tracking-widest uppercase mb-4 inline-block">Materi Utama</span>
-                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-800 mb-4">Evolusi Demokrasi Kita 🎬</h2>
-                <p class="text-slate-500 max-w-2xl mx-auto leading-relaxed">
-                    Tonton video dari Beneran Indonesia berikut ini untuk memahami bagaimana sistem politik kita bertransformasi hingga era Reformasi saat ini.
-                </p>
+    <main class="max-w-7xl mx-auto px-8 py-32">
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Card 1 -->
+            <div class="glass-card p-10 rounded-[2rem]">
+                <div class="text-4xl mb-6">🏛️</div>
+                <h3 class="text-2xl font-bold mb-4">Nilai Konstitusi</h3>
+                <p class="text-slate-400 leading-relaxed text-sm mb-8">Memahami dasar negara UUD 1945 sebagai pilar utama dalam menjalankan kehidupan berbangsa dan bernegara.</p>
+                <a href="edupolitik.html" class="text-red-500 font-bold text-xs uppercase tracking-widest hover:text-red-400">Selengkapnya &rarr;</a>
             </div>
 
-            <div class="video-container">
-                <iframe 
-                    src="https://www.youtube.com/embed/h32LjRkbNCM" 
-                    title="Demokrasi Indonesia" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    allowfullscreen>
-                </iframe>
-            </div>
-        </div>
-
-        <!-- Features Grid -->
-        <div class="grid md:grid-cols-3 gap-8 mb-24">
-            <div class="feature-card bg-white p-10 rounded-3xl border border-slate-100 shadow-xl shadow-slate-100">
-                <div class="w-16 h-16 bg-red-50 text-red-800 rounded-2xl flex items-center justify-center mb-8 text-3xl">🏛️</div>
-                <h3 class="text-2xl font-bold mb-4 text-slate-800">Sistem Negara</h3>
-                <p class="text-slate-500 leading-relaxed mb-6 text-sm">Pelajari struktur Trias Politika Indonesia: Eksekutif, Legislatif, dan Yudikatif dalam menjaga keadilan.</p>
-                <a href="#" class="text-red-800 font-bold flex items-center gap-2 hover:gap-4 transition-all">
-                    Selengkapnya <span>&rarr;</span>
-                </a>
+            <!-- Card 2 -->
+            <div class="glass-card p-10 rounded-[2rem]">
+                <div class="text-4xl mb-6">📜</div>
+                <h3 class="text-2xl font-bold mb-4">Arsip Sejarah</h3>
+                <p class="text-slate-400 leading-relaxed text-sm mb-8">Menelusuri jejak perjuangan demokrasi dari masa Parlementer hingga era Reformasi yang kita nikmati saat ini.</p>
+                <a href="sejarah.html" class="text-red-500 font-bold text-xs uppercase tracking-widest hover:text-red-400">Lihat Timeline &rarr;</a>
             </div>
 
-            <div class="feature-card bg-white p-10 rounded-3xl border border-slate-100 shadow-xl shadow-slate-100">
-                <div class="w-16 h-16 bg-red-50 text-red-800 rounded-2xl flex items-center justify-center mb-8 text-3xl">📜</div>
-                <h3 class="text-2xl font-bold mb-4 text-slate-800">UUD 1945</h3>
-                <p class="text-slate-500 leading-relaxed mb-6 text-sm">Konstitusi negara yang menjamin hak-hak sipil dan kedaulatan setiap warga negara Indonesia.</p>
-                <a href="#" class="text-red-800 font-bold flex items-center gap-2 hover:gap-4 transition-all">
-                    Baca Konstitusi <span>&rarr;</span>
-                </a>
-            </div>
-
-            <div class="feature-card bg-white p-10 rounded-3xl border border-slate-100 shadow-xl shadow-slate-100">
-                <div class="w-16 h-16 bg-red-50 text-red-800 rounded-2xl flex items-center justify-center mb-8 text-3xl">🗳️</div>
-                <h3 class="text-2xl font-bold mb-4 text-slate-800">Suara Rakyat</h3>
-                <p class="text-slate-500 leading-relaxed mb-6 text-sm">Partisipasi aktif dalam Pemilu sebagai bentuk nyata implementasi nilai-nilai demokrasi Pancasila.</p>
-                <a href="#" class="text-red-800 font-bold flex items-center gap-2 hover:gap-4 transition-all">
-                    Info Pemilu <span>&rarr;</span>
-                </a>
+            <!-- Card 3 -->
+            <div class="glass-card p-10 rounded-[2rem]">
+                <div class="text-4xl mb-6">🗳️</div>
+                <h3 class="text-2xl font-bold mb-4">Suara Pemuda</h3>
+                <p class="text-slate-400 leading-relaxed text-sm mb-8">Mendorong partisipasi aktif generasi muda dalam Pemilu sebagai bentuk nyata kedaulatan rakyat.</p>
+                <a href="#" class="text-red-500 font-bold text-xs uppercase tracking-widest hover:text-red-400">Info Pemilu &rarr;</a>
             </div>
         </div>
     </main>
 
-    <!-- Info Banner -->
-    <section class="bg-slate-900 py-24 px-8 overflow-hidden relative">
-        <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12 relative z-10">
-            <div class="text-center md:text-left">
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ingin tahu lebih dalam tentang <span class="text-red-600">Sejarah Kita?</span></h2>
-                <p class="text-slate-400 mb-8 max-w-xl">Telusuri transformasi demokrasi Indonesia dari masa ke masa melalui timeline interaktif yang kami sediakan.</p>
-                <a href="sejarah.html" class="inline-block bg-red-700 hover:bg-red-600 text-white px-8 py-4 rounded-xl font-bold transition-colors">
-                    Pelajari Sejarah Sekarang
-                </a>
-            </div>
-            <div class="flex-shrink-0">
-                <div class="w-64 h-64 bg-white/5 rounded-full flex items-center justify-center">
-                    <img src="garuda.png" class="w-40 h-40 opacity-20 grayscale brightness-200" alt="Background Logo" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/National_emblem_of_Indonesia_Garuda_Pancasila.svg/400px-National_emblem_of_Indonesia_Garuda_Pancasila.svg.png';">
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
-    <footer class="bg-white border-t border-slate-100 py-16 px-8 text-center">
-        <div class="flex items-center justify-center gap-3 mb-6">
-            <img src="garuda.png" alt="Footer Logo" class="w-8 h-8 opacity-80" onerror="this.style.display='none'">
-            <span class="font-bold tracking-[0.2em] text-slate-800 uppercase">DEMOKRASI INDONESIA</span>
+    <footer class="border-t border-white/5 py-20 px-8 text-center bg-slate-950">
+        <div class="flex items-center justify-center gap-3 mb-8">
+            <!-- Logo Footer menggunakan garuda.png -->
+            <img src="garuda.png" alt="Footer Logo Garuda" class="w-10 h-10 opacity-60 grayscale invert" onerror="this.style.display='none'">
+            <span class="font-bold tracking-[0.3em] text-slate-500 uppercase text-sm">DEMOKRASI INDONESIA</span>
         </div>
-        <p class="text-slate-400 text-sm max-w-lg mx-auto mb-10 leading-relaxed">Platform edukasi digital untuk memperkuat pemahaman nilai-negara, kedaulatan rakyat, dan persatuan Indonesia.</p>
-        <div class="flex justify-center gap-8 mb-12">
-            <a href="index.html" class="text-slate-400 hover:text-red-800 transition-colors uppercase text-[10px] font-black tracking-widest">Beranda</a>
-            <a href="sejarah.html" class="text-slate-400 hover:text-red-800 transition-colors uppercase text-[10px] font-black tracking-widest">Sejarah</a>
-            <a href="edupolitik.html" class="text-red-800 transition-colors uppercase text-[10px] font-black tracking-widest">Edu-Politik</a>
+        <div class="flex justify-center gap-10 mb-12">
+            <a href="index.html" class="text-red-500 text-[10px] font-black tracking-widest uppercase">Beranda</a>
+            <a href="sejarah.html" class="text-slate-500 hover:text-white transition-colors text-[10px] font-black tracking-widest uppercase">Sejarah</a>
+            <a href="edupolitik.html" class="text-slate-500 hover:text-white transition-colors text-[10px] font-black tracking-widest uppercase">Edu-Politik</a>
         </div>
-        <div class="text-[10px] text-slate-300 font-bold tracking-widest uppercase">
-            &copy; 2026 Arsip Digital Nasional Indonesia
-        </div>
+        <p class="text-[10px] text-slate-600 font-bold tracking-[0.2em] uppercase">
+            &copy; 2026 Arsip Digital Nasional - Menjaga Kedaulatan Rakyat
+        </p>
     </footer>
 
+    <script>
+        // Transisi Navigasi saat Scroll
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-slate-950/90', 'backdrop-blur-xl', 'py-4', 'border-b', 'border-white/5');
+                nav.classList.remove('py-8');
+            } else {
+                nav.classList.remove('bg-slate-950/90', 'backdrop-blur-xl', 'py-4', 'border-b', 'border-white/5');
+                nav.classList.add('py-8');
+            }
+        });
+    </script>
 </body>
 </html>
